@@ -1,0 +1,174 @@
+2021-10-09 15:09:14.485 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8001 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8001 or configure this application to listen on another port.
+
+2021-10-09 21:14:33.209 [main] ERROR c.a.c.sentinel.custom.SentinelDataSourceHandler - [Sentinel Starter] DataSource ds build error: Error creating bean with name 'ds-sentinel-nacos-datasource': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.alibaba.cloud.sentinel.datasource.factorybean.NacosDataSourceFactoryBean] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ds-sentinel-nacos-datasource': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.alibaba.cloud.sentinel.datasource.factorybean.NacosDataSourceFactoryBean] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:287)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1286)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at com.alibaba.cloud.sentinel.custom.SentinelDataSourceHandler.registerBean(SentinelDataSourceHandler.java:185)
+	at com.alibaba.cloud.sentinel.custom.SentinelDataSourceHandler.lambda$afterSingletonsInstantiated$0(SentinelDataSourceHandler.java:75)
+	at java.util.TreeMap.forEach(TreeMap.java:1005)
+	at com.alibaba.cloud.sentinel.custom.SentinelDataSourceHandler.afterSingletonsInstantiated(SentinelDataSourceHandler.java:62)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:896)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at cn.resulte.eduservice.EduApplication.main(EduApplication.java:16)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.alibaba.cloud.sentinel.datasource.factorybean.NacosDataSourceFactoryBean] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:477)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:318)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265)
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/alibaba/csp/sentinel/datasource/nacos/NacosDataSource
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:459)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.alibaba.csp.sentinel.datasource.nacos.NacosDataSource
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 28 common frames omitted
+2021-10-09 21:14:33.243 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.TypeNotPresentException: Type com.alibaba.csp.sentinel.datasource.nacos.NacosDataSource not present
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:108)
+	at java.lang.Class.getGenericInterfaces(Class.java:913)
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:492)
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:450)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getFactoryBeanGeneric(AbstractAutowireCapableBeanFactory.java:915)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:904)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:704)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:659)
+	at org.springframework.jmx.export.MBeanExporter.autodetect(MBeanExporter.java:880)
+	at org.springframework.jmx.export.MBeanExporter.registerBeans(MBeanExporter.java:542)
+	at org.springframework.jmx.export.MBeanExporter.afterSingletonsInstantiated(MBeanExporter.java:435)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:896)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at cn.resulte.eduservice.EduApplication.main(EduApplication.java:16)
+Caused by: java.lang.ClassNotFoundException: com.alibaba.csp.sentinel.datasource.nacos.NacosDataSource
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	... 26 common frames omitted
+2021-10-09 21:15:45.710 [main] ERROR c.a.c.sentinel.custom.SentinelDataSourceHandler - [Sentinel Starter] DataSource ds build error: Error creating bean with name 'ds-sentinel-nacos-datasource': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.alibaba.cloud.sentinel.datasource.factorybean.NacosDataSourceFactoryBean] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ds-sentinel-nacos-datasource': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.alibaba.cloud.sentinel.datasource.factorybean.NacosDataSourceFactoryBean] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:287)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1286)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at com.alibaba.cloud.sentinel.custom.SentinelDataSourceHandler.registerBean(SentinelDataSourceHandler.java:185)
+	at com.alibaba.cloud.sentinel.custom.SentinelDataSourceHandler.lambda$afterSingletonsInstantiated$0(SentinelDataSourceHandler.java:75)
+	at java.util.TreeMap.forEach(TreeMap.java:1005)
+	at com.alibaba.cloud.sentinel.custom.SentinelDataSourceHandler.afterSingletonsInstantiated(SentinelDataSourceHandler.java:62)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:896)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at cn.resulte.eduservice.EduApplication.main(EduApplication.java:16)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.alibaba.cloud.sentinel.datasource.factorybean.NacosDataSourceFactoryBean] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:477)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:318)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:265)
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/alibaba/csp/sentinel/datasource/nacos/NacosDataSource
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:459)
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.alibaba.csp.sentinel.datasource.nacos.NacosDataSource
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 28 common frames omitted
+2021-10-09 21:15:45.729 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+java.lang.TypeNotPresentException: Type com.alibaba.csp.sentinel.datasource.nacos.NacosDataSource not present
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68)
+	at sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138)
+	at sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49)
+	at sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:108)
+	at java.lang.Class.getGenericInterfaces(Class.java:913)
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:492)
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:450)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getFactoryBeanGeneric(AbstractAutowireCapableBeanFactory.java:915)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:904)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:704)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:659)
+	at org.springframework.jmx.export.MBeanExporter.autodetect(MBeanExporter.java:880)
+	at org.springframework.jmx.export.MBeanExporter.registerBeans(MBeanExporter.java:542)
+	at org.springframework.jmx.export.MBeanExporter.afterSingletonsInstantiated(MBeanExporter.java:435)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:896)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at cn.resulte.eduservice.EduApplication.main(EduApplication.java:16)
+Caused by: java.lang.ClassNotFoundException: com.alibaba.csp.sentinel.datasource.nacos.NacosDataSource
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114)
+	... 26 common frames omitted

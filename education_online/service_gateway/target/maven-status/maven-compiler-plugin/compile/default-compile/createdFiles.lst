@@ -1,0 +1,5 @@
+cn\resulte\gateway\filter\AuthGlobalFilter.class
+cn\resulte\gateway\handler\ErrorHandlerConfig.class
+cn\resulte\gateway\handler\JsonExceptionHandler.class
+cn\resulte\gateway\ServiceGatewayApplication.class
+cn\resulte\gateway\config\CorsConfig.class

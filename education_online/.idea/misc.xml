@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/api_gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/service_gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/service_acl/pom.xml" />
+        <option value="$PROJECT_DIR$/service_edu/pom.xml" />
+        <option value="$PROJECT_DIR$/service_order/pom.xml" />
+        <option value="$PROJECT_DIR$/service_statistics/pom.xml" />
+        <option value="$PROJECT_DIR$/service_video/pom.xml" />
+        <option value="$PROJECT_DIR$/service_auth/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/service/service_oss/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
